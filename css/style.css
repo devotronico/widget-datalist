@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing : border-box;
+}
+
+html {
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: #333;
+}
+
+body {
+    height: 100vh;
+    background-color: #666;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #999;
+}
+
+.wrapper {
+    width: 1000px;
+    height: 500px;
+    padding: 10px;
+    /* height: 100vh; */
+     display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #aaa;
+}
+
+
+table {
+    border-collapse: collapse;
+    background-color: #ccc;
+}
+
+th{
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+td {
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+
+
+
+
+/* <WIDGET> */
+
+/* Primo elemento UL 
+oldClass: select-list-group, oldId: slg*/
+.widget{
+    /* width: 240px; */
+    /* padding: 8px 16px; */
+    /* background-color: transparent; */
+    background-color: red;
+}
+
+
+
+
+/* è il contenitore che racchiude gli elementi INPUT, SPAN, e UL.
+lasciare position settato su relative per evitare che la freccia si rompa
+oldclass: select-list-group__list-parent */
+.widget__group{
+    position: relative;
+    /* width: 220px; */
+    /* background-color : transparent; */
+    background-color: blue;
+}
+  
+
+
+/* <INPUT> */
+.widget__search { position: relative;
+    /* width: 220px; */
+    padding: 8px 16px;
+    /* background-color: green; */
+}
+/* <INPUT> */
+
+
+/* <FRECCIA> */
+/* stilizza la freccina:  se il campo input NON è attivo
+oldclass: select-list-group__search 
+ldclass: widget__toggle */
+.widget__search +  
+.widget__toggle:after {
+    content:"▼";
+    color: rgba(0, 0, 0, .5);
+    font-family: sans-serif;
+    position: absolute;
+    text-align: center;
+    right: 2px;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 2px 4px;
+
+    /* 1
+     top: 2px;
+    right: 0;
+    padding: 6px; */
+   
+}
+
+/*  stilizza la freccina: se il campo input è attivo */
+.widget__search:focus +  
+.widget__toggle:after {
+    content:"▲";
+    /* background-color: rgb(238, 238, 238); */
+}
+
+/*
+.widget__toggle:hover {
+
+    width: 20px;
+    height: 20px;
+    background-color: green;
+}
+*/
+/* </FRECCIA> */
+
+
+
+
+/* <UL> */
+.widget__list { 
+    /* padding: .6rem .5rem; */
+    
+    position: absolute;
+    list-style: none; 
+    max-height: 200px; 
+    overflow-y: auto;
+    border-bottom-left-radius: 4px;
+}
+
+/* è l' attributo di default per il secondo elemento UL 
+nasconde l' elemento UL e tutti i suoi elementi figli LI */
+[data-toggle="false"] { display: none }
+
+
+/* rende visibile l'elemento UL e la lista di elementi LI e
+ombre intorno al contenitore della lista */
+[data-toggle="true"] {
+    display: inherit;
+    -webkit-box-shadow: 0 3px 7px -2px rgba(0, 0, 0, .2);
+    -moz-box-shadow   : 0 3px 7px -2px rgba(0, 0, 0, .2);
+    box-shadow        : 0 3px 7px -2px rgba(0, 0, 0, .5);
+}
+/* </UL> */
+
+
+
+
+/* <LI-ITEMS-OPTIONS> */
+/* lista che simula le option */
+.widget__item {
+    padding: 8px 16px;
+    /* padding: .6rem .5rem; */
+    /* overflow-x: hidden; */
+    background-color : #fff;
+}
+
+
+/* se il mouse passa sopra una option ne cambia il colore del font e del background*/
+.widget__item:hover { color: white; background-color: #007BFF }
+
+
+/* gli elementi LI della lista quando hanno il testo che NON corrisponde al testo nel campo INPUT allora vengono nascosti*/
+[data-display="false"] { display: none }
+/* gli elementi LI della lista quando hanno il testo che corrisponde al testo nel campo INPUT allora vengono mostrati*/
+[data-display="true"] { display: inherit }
+
+
+/* è il valore di default dell' attributo  */
+[data-highlight="false"] { border-left: 5px solid transparent }
+
+/* l' attributo si attiva quando la lista è aperta e si premono i tasti freccia su e giu della tastiera:
+Consente di selezionare gli elementi LI con i tasti freccia su e giu  */
+[data-highlight="true"] { border-left: 5px solid red }
+
+
+/* da attivare */
+.current { color: #fff; background-color: green }
+/* </LI-ITEMS-OPTIONS> */
+
+
+.test {
+    background-color: yellow;
+}
+
+
+  
+/* </WIDGET> */
+
+
+/* <SELECT2> */
+.lib {
+    width: 240px;
+}
+/* </SELECT2> */
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+ 
+    
+
+
+
+   
+    
+  
